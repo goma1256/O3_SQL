@@ -260,7 +260,6 @@ CREATE TABLE [dbo].[RTCourse](
      [RTCourse_ID] [int] IDENTITY(1,1) NOT NULL,
 [DiagStaging_ID][int] NULL,
 [RTPrescription_ID][int] NULL,
-[RTCourse_ID][int] NULL,
 [RTTreatedPlan_ID][int] NULL,
 [Charge_ID][int] NULL,
      [RTCourse_DateOfRecord][varchar](50) NULL,
