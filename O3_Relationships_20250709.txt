@@ -1,0 +1,134 @@
+KeyElement	Subject	RelationshipCategory	Predicate	Cardinality				
+Patient	RTCourse	ChildElement-Of	Patient	Many to One		RTCourse	 part-of 	Patient	
+Patient	RTPrescription	ChildElement-Of	Patient	Many to One		RTPrescription	 part-of 	Patient	
+Patient	DiagStaging	ChildElement-Of	Patient	Many to One		DiagStaging	 part-of 	Patient	
+Patient	RTTreatedPlan	InstanceAssociated-with	Patient	Many to One	*	RTTreatedPlan	 characteristic-of 	Patient	
+Patient	ReIrradiationEvaluation	ChildElement-Of	Patient	Many to One		ReIrradiationEvaluation	 part-of 	Patient	
+Patient	PatientTreatmentOutcome	ChildElement-Of	Patient	Many to One		PatientTreatmentOutcome	 part-of 	Patient	
+Patient	PlanningStructureSet	ChildElement-Of	Patient	Many to One		PlanningStructureSet	 part-of 	Patient	
+Patient	ProviderReportedToxicity	ChildElement-Of	Patient	Many to One		ProviderReportedToxicity	 part-of 	Patient	
+Patient	PRO	ChildElement-Of	Patient	Many to One		PRO	 part-of 	Patient	
+Patient	PatientInformation	ChildElement-Of	Patient	Many to One		PatientInformation	 part-of 	Patient	
+Patient	LabResult	ChildElement-Of	Patient	Many to One		LabResult	 part-of 	Patient	
+Patient	SupportiveMedication	ChildElement-Of	Patient	Many to One		SupportiveMedication	 part-of 	Patient	
+Patient	SysTherCourse	ChildElement-Of	Patient	Many to One		SysTherCourse	 part-of 	Patient	
+Patient	InterventionalProcedure	ChildElement-Of	Patient	Many to One		InterventionalProcedure	 part-of 	Patient	
+Patient	Charge	ChildElement-Of	Patient	Many to One		Charge	 part-of 	Patient	
+PatientInformation	PatientInformation	ChildElement-Of	Patient	ManyToOne		PatientInformation	 part-of 	Patient	
+DiagStaging	DiagStaging	ChildElement-Of	Patient	ManyToOne		DiagStaging	 part-of 	Patient	
+DiagStaging	DiagStaging	InstanceAssociated-with	RTCourse	OneToMany	*	DiagStaging	 characteristic-of 	RTCourse	
+DiagStaging	DiagStaging	InstanceAssociated-with	SysTherCourse	OneToOne	*	DiagStaging	 characteristic-of 	SysTherCourse	
+DiagStaging	DiagStaging	InstanceAssociated-with	InterventionalProcedure	OneToMany	*	DiagStaging	 characteristic-of 	InterventionalProcedure	
+DiagStagingHN	DiagStagingHN	ChildElement-Of	DiagStaging	One to One		DiagStagingHN	 part-of 	DiagStaging	
+DiagStagingProst	DiagStagingProst	ChildElement-Of	DiagStaging	One to One		DiagStagingProst	 part-of 	DiagStaging	
+DiagStagingTreatmentOverview	DiagStagingTreatmentOverview	ChildElement-Of	DiagStaging	One to One		DiagStagingTreatmentOverview	 part-of 	DiagStaging	
+PatientTreatmentOutcome	PatientTreatmentOutcome	ChildElement-Of	Patient	Many to One		PatientTreatmentOutcome	 part-of 	Patient	
+PatientTreatmentOutcome	PatientTreatmentOutcome	InstanceAssociated-with	RTCourse	One To Many	*	PatientTreatmentOutcome	 characteristic-of 	RTCourse	
+PatientTreatmentOutcome	PatientTreatmentOutcome	InstanceAssociated-with	SysTherCourse	OneToMany	*	PatientTreatmentOutcome	 characteristic-of 	SysTherCourse	
+PatientTreatmentOutcome	PatientTreatmentOutcome	InstanceAssociated-with	InterventionalProcedure	OneToMany	*	PatientTreatmentOutcome	 characteristic-of 	InterventionalProcedure	
+ProviderReportedToxicity	ProviderReportedToxicity	ChildElement-Of	Patient	Many To One		ProviderReportedToxicity	 part-of 	Patient	
+ProviderReportedToxicity	ProviderReportedToxicity	InstanceAssociated-with	RTCourse	One To Many	*	ProviderReportedToxicity	 characteristic-of 	RTCourse	
+ProviderReportedToxicity	ProviderReportedToxicity	InstanceAssociated-with	SysTherCourse	One To Many	*	ProviderReportedToxicity	 characteristic-of 	SysTherCourse	
+ProviderReportedToxicity	ProviderReportedToxicity	InstanceAssociated-with	InterventionalProcedure	One To Many	*	ProviderReportedToxicity	 characteristic-of 	InterventionalProcedure	
+PRO	PRO	ChildElement-Of	Patient	Many To One		PRO	 part-of 	Patient	
+PRO	PRO	InstanceAssociated-with	RTCourse	One To Many	*	PRO	 characteristic-of 	RTCourse	
+PRO	PRO	InstanceAssociated-with	SysTherCourse	One To Many	*	PRO	 characteristic-of 	SysTherCourse	
+PRO	PRO	InstanceAssociated-with	InterventionalProcedure	One To Many	*	PRO	 characteristic-of 	InterventionalProcedure	
+PerformanceScore	PerformanceScore	ChildElement-Of	Patient	Many to One		PerformanceScore	 part-of 	Patient	
+RTCourse	RTCourse	ChildElement-Of	Patient	Many to One		RTCourse	 part-of 	Patient	
+RTCourse	DiagStaging	InstanceAssociated-with	RTCourse	Many	*	DiagStaging	 characteristic-of 	RTCourse	
+RTCourse	RTPrescription	InstanceAssociated-with	RTCourse	Many to One	*	RTPrescription	 characteristic-of 	RTCourse	
+RTCourse	RTTreatedPlan	ChildElement-Of	RTCourse	Many to One		RTTreatedPlan	 part-of 	RTCourse	
+RTCourseTargetDose	RTCourseTargetDose	ChildElement-Of	RTCourse	Many to One		RTCourseTargetDose	 part-of 	RTCourse	
+RTCourseEvent	RTCourseEvent	ChildElement-Of	RTCourse	Many to One		RTCourseEvent	 part-of 	RTCourse	
+RTCourseSession	RTCourseSession	ChildElement-Of	RTCourse	Many to One		RTCourseSession	 part-of 	RTCourse	
+RTCourseSession	RTTreatedPlanFraction	ChildElement-Of	RTCourseSession	Many to One		RTTreatedPlanFraction	 part-of 	RTCourseSession	
+RTPhase	RTPhase	ChildElement-Of	RTCourse	ManyToOne		RTPhase	 part-of 	RTCourse	
+RTPhase	RTPhase	InstanceAssociated-with	RTPrescription	OneToOne	*	RTPhase	 characteristic-of 	RTPrescription	
+RTPhaseTargetDose	RTPhaseTargetDose	ChildElement-Of	RTPhase	ManyToOne		RTPhaseTargetDose	 part-of 	RTPhase	
+RTPrescription	RTPrescription	ChildElement-Of	Patient	Many to One		RTPrescription	 part-of 	Patient	
+RTPrescription	RTPrescription	ChildElement-Of	RTCourse	Many to One		RTPrescription	 part-of 	RTCourse	
+RTPrescription	RTPrescription	InstanceAssociated-with	DiagStaging	One to Many	*	RTPrescription	 characteristic-of 	DiagStaging	
+RTPrescription	RTPrescriptionTargetDose	ChildElement-Of	RTPrescription	Many to One		RTPrescriptionTargetDose	 part-of 	RTPrescription	
+RTPrescription	RTPrescriptionDVHObjectives	ChildElement-Of	RTPrescription	Many to One		RTPrescriptionDVHObjectives	 part-of 	RTPrescription	
+RTPrescription	RTTreatedPlan	InstanceAssociated-with	RTPrescription	Many to One	*	RTTreatedPlan	 characteristic-of 	RTPrescription	
+RTPrescription	RTPrescription	InstanceAssociated-with	RTPhase	One to One	*	RTPrescription	 characteristic-of 	RTPhase	
+RTPrescriptionTargetDose	RTPrescriptionTargetDose	ChildElement-Of	RTPrescription	Many to One		RTPrescriptionTargetDose	 part-of 	RTPrescription	
+RTPrescriptionDoseObjective	RTPrescriptionDoseObjective	ChildElement-Of	RTPrescription	Many to One		RTPrescriptionDoseObjective	 part-of 	RTPrescription	
+RTTreatedPlan	RTTreatedPlan	ChildElement-Of	RTCourse	Many to One		RTTreatedPlan	 part-of 	RTCourse	
+RTTreatedPlan	RTPlanningStructureSet	ChildElement-Of	RTTreatedPlan	One to One		RTPlanningStructureSet	 part-of 	RTTreatedPlan	
+RTTreatedPlan	DVHCurve	ChildElement-Of	RTTreatedPlan	Many to One		DVHCurve	 part-of 	RTTreatedPlan	
+RTTreatedPlan	DVHMetric	ChildElement-Of	RTTreatedPlan	Many to One		DVHMetric	 part-of 	RTTreatedPlan	
+RTTreatedPlan	RTTreatedPlanDetailsXRT	ChildElement-Of	RTTreatedPlan	One to One		RTTreatedPlanDetailsXRT	 part-of 	RTTreatedPlan	
+RTTreatedPlan	RTTreatedPlanDetailsBrachytherapy	ChildElement-Of	RTTreatedPlan	One to One		RTTreatedPlanDetailsBrachytherapy	 part-of 	RTTreatedPlan	
+RTTreatedPlan	RTTreatedPlanDetailsHadrons	ChildElement-Of	RTTreatedPlan	One to One		RTTreatedPlanDetailsHadrons	 part-of 	RTTreatedPlan	
+RTTreatedPlan	RTPrescription	InstanceAssociated-with	RTTreatedPlan	One to Many	*	RTPrescription	 characteristic-of 	RTTreatedPlan	
+RTTreatedPlan	Image	InstanceAssociated-with	RTTreatedPlan	Many to One	*	Image	 characteristic-of 	RTTreatedPlan	
+RTTreatedPlan	RTTreatedPlan	InstanceAssociated-with	ReIrradiationEvaluation	Many to One	*	RTTreatedPlan	 characteristic-of 	ReIrradiationEvaluation	
+RTTreatedPlanTargetDose	RTTreatedPlanTargetDose	ChildElement-Of	RTTreatedPlan	Many to One		RTTreatedPlanTargetDose	 part-of 	RTTreatedPlan	
+ReirradiationEvaluation	ReirradiationEvaluation	ChildElement-Of	Patient	Many to One		ReirradiationEvaluation	 part-of 	Patient	
+ReirradiationEvaluation	ReirradiationEvaluation	InstanceAssociated-with	RTCourse	Many to One	*	ReirradiationEvaluation	 characteristic-of 	RTCourse	
+ReirradiationEvaluation	RTTreatedPlan	InstanceAssociated-with	ReirradiationEvaluation	Many to One	*	RTTreatedPlan	 characteristic-of 	ReirradiationEvaluation	
+ReirradiationEvaluation	ReirradiationEvaluation_DVHMetric	ChildElement-Of	ReirradationEvaluation	Many to One		ReirradiationEvaluation_DVHMetric	 part-of 	ReirradationEvaluation	
+ReirradiationEvaluation_DVHMetric	ReirradiationEvaluation_DVHMetric	ChildElement-Of	ReirradiationEvaluation	Many to One		ReirradiationEvaluation_DVHMetric	 part-of 	ReirradiationEvaluation	
+ReirradiationEvaluation_DVHMetric	ReirradiationEvaluation_DVHMetric	InstanceAssociated-with	RTCourse	Many to One	*	ReirradiationEvaluation_DVHMetric	 characteristic-of 	RTCourse	
+RTTreatedPlanDetailsXRT	RTTreatedPlanDetailsXRT	ChildElement-Of	RTTreatedPlan	One to One		RTTreatedPlanDetailsXRT	 part-of 	RTTreatedPlan	
+RTTreatedPlanDetailsBrachytherapy	RTTreatedPlanDetailsBrachytherapy	ChildElement-Of	RTTreatedPlan	One to One		RTTreatedPlanDetailsBrachytherapy	 part-of 	RTTreatedPlan	
+RTTreatedPlanDetailsRadiopharmaceutical	RTTreatedPlanDetailsRadiopharmaceutical	ChildElement-Of	RTTreatedPlan	One to One		RTTreatedPlanDetailsRadiopharmaceutical	 part-of 	RTTreatedPlan	
+RTTreatedPlanDetailsHadrons	RTTreatedPlanDetailsHadrons	ChildElement-Of	RTTreatedPlan	One to One		RTTreatedPlanDetailsHadrons	 part-of 	RTTreatedPlan	
+RTTreatedFieldDetailsHadrons	RTTreatedFieldDetailsHadrons	ChildElement-Of	RTTreatedPlanDetailsHadrons	Many to One		RTTreatedFieldDetailsHadrons	 part-of 	RTTreatedPlanDetailsHadrons	
+RTTreatedPlanFraction	RTTreatedPlanFraction	InstanceAssociated-with	RTTreatedPlan	Many to One	*	RTTreatedPlanFraction	 characteristic-of 	RTTreatedPlan	
+RTTreatedPlanFraction	RTTreatedPlanFraction	ChildElement-Of	RTCourseSession	Many to One		RTTreatedPlanFraction	 part-of 	RTCourseSession	
+RTTreatedFieldFraction	RTTreatedFieldFraction	ChildElement-Of	RTTreatedPlanFraction	Many to One		RTTreatedFieldFraction	 part-of 	RTTreatedPlanFraction	
+DVHCurve	DVHCurve	ChildElement-Of	RTTreatedPlan	Many to One		DVHCurve	 part-of 	RTTreatedPlan	
+DVHCurve	DVHMetric	InstanceAssociated-with	DVHCurve	Many to One	*	DVHMetric	 characteristic-of 	DVHCurve	
+DVHMetric	DVHMetric	ChildElement-Of	RTTreatedPlan	Many to One		DVHMetric	 part-of 	RTTreatedPlan	
+DVHMetric	DVHMetric	InstanceAssociated-with	DVHCurve	Many to One	*	DVHMetric	 characteristic-of 	DVHCurve	
+RTPlanningStructureSet	RTPlanningStructureSet	ChildElement-Of	RTTreatedPlan	One to One		RTPlanningStructureSet	 part-of 	RTTreatedPlan	
+RTPlanningStructureSet	RTPlanning Structure	ChildElement-Of	RTPlanningStructureSet	Many to One		RTPlanning Structure	 part-of 	RTPlanningStructureSet	
+RTPlanningStructure	RTPlanningStructure	ChildElement-Of	RTPlanningStructureSet	Many to One		RTPlanningStructure	 part-of 	RTPlanningStructureSet	
+RTPlanningStructure	RTPlanningStructure	InstanceAssociated-with	DVHCurve	One to One	*	RTPlanningStructure	 characteristic-of 	DVHCurve	
+Image	Image	ChildElement-Of	Patient	Many to One		Image	 part-of 	Patient	
+Image	RTCourse	InstanceAssociated-with	Image	One to Many	*	RTCourse	 characteristic-of 	Image	
+Image	RTCourseSession	InstanceAssociated-with	Image	One to Many	*	RTCourseSession	 characteristic-of 	Image	
+LabResult	LabResult	ChildElement-Of	Patient	Many to One		LabResult	 part-of 	Patient	
+LabResult	LabResult	InstanceAssociated-with	RTCourse	Many to One	*	LabResult	 characteristic-of 	RTCourse	
+LabResult	LabResult	InstanceAssociated-with	SysTherCourse	Many to One	*	LabResult	 characteristic-of 	SysTherCourse	
+LabResult	LabResult	InstanceAssociated-with	InterventionalProcedure	Many to One	*	LabResult	 characteristic-of 	InterventionalProcedure	
+SupportiveMedication	SupportiveMedication	ChildElement-Of	Patient	Many to One		SupportiveMedication	 part-of 	Patient	
+SupportiveMedication	SupportiveMedication	InstanceAssociated-with	RTCourse	Many to One	*	SupportiveMedication	 characteristic-of 	RTCourse	
+SupportiveMedication	SupportiveMedication	InstanceAssociated-with	SysTherCourse	Many to One	*	SupportiveMedication	 characteristic-of 	SysTherCourse	
+SupportiveMedication	SupportiveMedication	InstanceAssociated-with	InterventionalProcedure	Many to One	*	SupportiveMedication	 characteristic-of 	InterventionalProcedure	
+FunctionTestResult	FunctionTestResult	ChildElement-Of	Patient	Many to One		FunctionTestResult	 part-of 	Patient	
+FunctionTestResult	FunctionTestResult	InstanceAssociated-with	RTCourse	Many to One	*	FunctionTestResult	 characteristic-of 	RTCourse	
+FunctionTestResult	FunctionTestResult	InstanceAssociated-with	SysTherCourse	Many to One	*	FunctionTestResult	 characteristic-of 	SysTherCourse	
+FunctionTestResult	FunctionTestResult	InstanceAssociated-with	InterventionalProcedure	Many to One	*	FunctionTestResult	 characteristic-of 	InterventionalProcedure	
+SysTherCourse	SysTherCourse	ChildElement-Of	Patient	Many to One		SysTherCourse	 part-of 	Patient	
+SysTherCourse	SysTherCourse	InstanceAssociated-with	DiagStaging	One to Many	*	SysTherCourse	 characteristic-of 	DiagStaging	
+SysTherCycleDrugsChemo	SysTherCycleDrugsChemo	ChildElement-Of	SysTherCycle	Many to One		SysTherCycleDrugsChemo	 part-of 	SysTherCycle	
+SysTherCycleDrugsHT	SysTherCycleDrugsHT	ChildElement-Of	SysTherCycle	Many to One		SysTherCycleDrugsHT	 part-of 	SysTherCycle	
+SysTherCycleDrugsImmuno	SysTherCycleDrugsImmuno	ChildElement-Of	SysTherCycle	Many to One		SysTherCycleDrugsImmuno	 part-of 	SysTherCycle	
+SysTherCycleDrugsImmuno	SysTherCycleDrugsImmuno	ChildElement-Of	SysTherCourse	OneToMany		SysTherCycleDrugsImmuno	 part-of 	SysTherCourse	
+InterventionalProcedure	InterventionalProcedure	ChildElement-Of	Patient	Many to One		InterventionalProcedure	 part-of 	Patient	
+InterventionalProcedure	InterventionalProcedure	InstanceAssociated-with	Diagnosis and Staging	One to Many	*	InterventionalProcedure	 characteristic-of 	Diagnosis and Staging	
+InterventionalProcedure	RTCourse	InstanceAssociated-with	InterventionalProcedure	One to Many	*	RTCourse	 characteristic-of 	InterventionalProcedure	
+InterventionalProcedure	SysTherCourse	InstanceAssociated-with	InterventionalProcedure	Many to Many	*	SysTherCourse	 characteristic-of 	InterventionalProcedure	
+PatientEncounter	PatientEncounter	ChildElement-Of	Patient	Many to One		PatientEncounter	 part-of 	Patient	
+PatientEncounter	PatientEncounter	InstanceAssociated-with	RTCourse	Many to One	*	PatientEncounter	 characteristic-of 	RTCourse	
+PatientEncounter	PatientEncounter	InstanceAssociated-with	SysTherCourse	Many to One	*	PatientEncounter	 characteristic-of 	SysTherCourse	
+PatientEncounter	PatientEncounter	InstanceAssociated-with	InterventionalProcedure	Many to One	*	PatientEncounter	 characteristic-of 	InterventionalProcedure	
+Charge	Charge	ChildElement-Of	Patient	Many to One		Charge	 part-of 	Patient	
+Charge	Charge	InstanceAssociated-with	RTCourse	Many to One	*	Charge	 characteristic-of 	RTCourse	
+Charge	Charge	InstanceAssociated-with	SysTherCourse	Many to One	*	Charge	 characteristic-of 	SysTherCourse	
+Charge	Charge	InstanceAssociated-with	InterventionalProcedure	Many to One	*	Charge	 characteristic-of 	InterventionalProcedure	
+Charge	Charge	InstanceAssociated-with	PatientEncounter	Many to One	*	Charge	 characteristic-of 	PatientEncounter	
+HCO	HCO_Site	ChildElement-Of	HCO	Many to One		HCO_Site	 part-of 	HCO	
+HCO_Site	HCO_Site	ChildElement-Of	HCO	Many to One		HCO_Site	 part-of 	HCO	
+HCO_Site	HCO_Site	IsSameAs	RTCourse_Facility	One to One	*	HCO_Site	 characteristic-of 	RTCourse_Facility	
+HCO_Site	HCO_Site	IsSameAs	SysTherCourse_Facility	One to One	*	HCO_Site	 characteristic-of 	SysTherCourse_Facility	
+HCO_SiteCount	HCO_SiteCount	ChildElement-Of	HCO_Site	Many to One		HCO_SiteCount	 part-of 	HCO_Site	
+HCO_SiteUnitCount	HCO_SiteUnitCount	ChildElement-Of	HCO_Site	Many to One		HCO_SiteUnitCount	 part-of 	HCO_Site	
+HCO_SiteUnitUtilizationCount	HCO_SiteUnitUtilizationCount	ChildElement-Of	HCO_Site	Many to One		HCO_SiteUnitUtilizationCount	 part-of 	HCO_Site	
+HCO_SiteCapabilities	HCO_SiteCapabilities	ChildElement-Of	HCO_Site	Many to One		HCO_SiteCapabilities	 part-of 	HCO_Site	
+HCO_SiteStaff	HCO_SiteStaff	ChildElement-Of	HCO_Site	Many to One		HCO_SiteStaff	 part-of 	HCO_Site	
+HCO_SiteImgTrtUnitInfo	HCO_SiteImgTrtUnitInfo	ChildElement-Of	HCO_Site	Many to One		HCO_SiteImgTrtUnitInfo	 part-of 	HCO_Site	
