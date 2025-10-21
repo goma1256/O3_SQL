@@ -42,7 +42,6 @@ GO
 
 CREATE TABLE [dbo].[PatientInformation](
      [PatientInformation_ID] [int] IDENTITY(1,1) NOT NULL,
-[PatientInformation_ID][int] NULL,
      [PatientInformation_DateOfRecord][varchar](50) NULL,
      [PatientInformation_AgeAtRecord][float] NULL,
      [PatientInformation_VitalStatus][varchar](50) NULL,
@@ -82,10 +81,6 @@ GO
 
 CREATE TABLE [dbo].[DiagStaging](
      [DiagStaging_ID] [int] IDENTITY(1,1) NOT NULL,
-[DiagStaging_ID][int] NULL,
-[DiagStaging_ID][int] NULL,
-[DiagStaging_ID][int] NULL,
-[DiagStaging_ID][int] NULL,
      [DiagStaging_DateOfRecord][varchar](50) NULL,
      [DiagStaging_AgeAtRecord][float] NULL,
      [DiagStaging_StagingSystem][varchar](50) NULL,
@@ -121,7 +116,6 @@ GO
 
 CREATE TABLE [dbo].[DiagStagingHN](
      [DiagStagingHN_ID] [int] IDENTITY(1,1) NOT NULL,
-[DiagStagingHN_ID][int] NULL,
      [DiagStagingHN_DateOfRecord][varchar](50) NULL,
      [DiagStagingHN_AgeAtRecord][float] NULL,
      [DiagStagingHN_DistanceToClosestMargin][float] NULL,
@@ -151,7 +145,6 @@ GO
 
 CREATE TABLE [dbo].[DiagStagingProst](
      [DiagStagingProst_ID] [int] IDENTITY(1,1) NOT NULL,
-[DiagStagingProst_ID][int] NULL,
      [DiagStagingProst_DateOfRecord][varchar](50) NULL,
      [DiagStagingProst_AgeAtRecord][float] NULL,
      [DiagStagingProst_HadProstatectomy][bit] NULL,
@@ -181,7 +174,6 @@ GO
 
 CREATE TABLE [dbo].[DiagStagingTreatmentOverview](
      [DiagStagingTreatmentOverview_ID] [int] IDENTITY(1,1) NOT NULL,
-[DiagStagingTreatmentOverview_ID][int] NULL,
      [DiagStagingTreatmentOverview_DateOfRecord][varchar](50) NULL,
      [DiagStagingTreatmentOverview_AgeAtRecord][float] NULL,
      [DiagStagingTreatmentOverview_RadTherAsPartOfTreatment][varchar](50) NULL,
@@ -201,10 +193,6 @@ GO
 
 CREATE TABLE [dbo].[PatientTreatmentOutcome](
      [PatientTreatmentOutcome_ID] [int] IDENTITY(1,1) NOT NULL,
-[PatientTreatmentOutcome_ID][int] NULL,
-[PatientTreatmentOutcome_ID][int] NULL,
-[PatientTreatmentOutcome_ID][int] NULL,
-[PatientTreatmentOutcome_ID][int] NULL,
      [PatientTreatmentOutcome_DateOfRecord][varchar](50) NULL,
      [PatientTreatmentOutcome_AgeAtRecord][float] NULL,
      [PatientTreatmentOutcome_DiseaseStatus][varchar](50) NULL,
@@ -222,10 +210,6 @@ GO
 
 CREATE TABLE [dbo].[ProviderReportedToxicity](
      [ProviderReportedToxicity_ID] [int] IDENTITY(1,1) NOT NULL,
-[ProviderReportedToxicity_ID][int] NULL,
-[ProviderReportedToxicity_ID][int] NULL,
-[ProviderReportedToxicity_ID][int] NULL,
-[ProviderReportedToxicity_ID][int] NULL,
      [ProviderReportedToxicity_DateOfRecord][varchar](50) NULL,
      [ProviderReportedToxicity_AgeAtRecord][float] NULL,
      [ProviderReportedToxicity_ToxictyCodingSystem][varchar](50) NULL,
@@ -242,10 +226,6 @@ GO
 
 CREATE TABLE [dbo].[PRO](
      [PRO_ID] [int] IDENTITY(1,1) NOT NULL,
-[PRO_ID][int] NULL,
-[PRO_ID][int] NULL,
-[PRO_ID][int] NULL,
-[PRO_ID][int] NULL,
      [PRO_DateOfRecord][varchar](50) NULL,
      [PRO_AgeAtRecord][float] NULL,
      [PRO_Instrument][varchar](50) NULL,
@@ -263,7 +243,6 @@ GO
 
 CREATE TABLE [dbo].[PerformanceScore](
      [PerformanceScore_ID] [int] IDENTITY(1,1) NOT NULL,
-[PerformanceScore_ID][int] NULL,
      [PerformanceScore_DateOfRecord][varchar](50) NULL,
      [PerformanceScore_AgeAtRecord][float] NULL,
      [PerformanceScore_System][varchar](50) NULL,
@@ -279,7 +258,6 @@ GO
 
 CREATE TABLE [dbo].[RTCourse](
      [RTCourse_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTCourse_ID][int] NULL,
 [DiagStaging_ID][int] NULL,
 [RTPrescription_ID][int] NULL,
 [RTCourse_ID][int] NULL,
@@ -315,7 +293,6 @@ GO
 
 CREATE TABLE [dbo].[RTCourseTargetDose](
      [RTCourseTargetDose_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTCourseTargetDose_ID][int] NULL,
      [RTCourseTargetDose_VolumeName][varchar](50) NULL,
      [RTCourseTargetDose_VolumeDose][float] NULL,
      [RTCourseTargetDose_DoseUnit][varchar](50) NULL,
@@ -330,7 +307,6 @@ GO
 
 CREATE TABLE [dbo].[RTCourseEvent](
      [RTCourseEvent_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTCourseEvent_ID][int] NULL,
      [RTCourseEvent_DateOfRecord][varchar](50) NULL,
      [RTCourseEvent_AgeAtRecord][float] NULL,
      [RTCourseEvent_Type][varchar](50) NULL,
@@ -345,7 +321,6 @@ GO
 
 CREATE TABLE [dbo].[RTCourseSession](
      [RTCourseSession_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTCourseSession_ID][int] NULL,
 [RTTreatedPlanFraction_ID][int] NULL,
      [RTCourseSession_DateOfRecord][varchar](50) NULL,
      [RTCourseSession_AgeAtRecord][float] NULL,
@@ -366,8 +341,6 @@ GO
 
 CREATE TABLE [dbo].[RTPhase](
      [RTPhase_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTPhase_ID][int] NULL,
-[RTPhase_ID][int] NULL,
      [RTPhase_DateOfRecord][varchar](50) NULL,
      [RTPhase_AgeAtRecord][float] NULL,
      [RTPhase_Name][varchar](50) NULL,
@@ -385,7 +358,6 @@ GO
 
 CREATE TABLE [dbo].[RTPhaseTargetDose](
      [RTPhaseTargetDose_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTPhaseTargetDose_ID][int] NULL,
      [RTPhaseTarget_VolumeName][varchar](50) NULL,
      [RTPhaseTarget_VolumeDose][float] NULL,
      [RTPhaseTarget_DoseUnit][varchar](50) NULL,
@@ -400,13 +372,9 @@ GO
 
 CREATE TABLE [dbo].[RTPrescription](
      [RTPrescription_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTPrescription_ID][int] NULL,
-[RTPrescription_ID][int] NULL,
-[RTPrescription_ID][int] NULL,
 [RTPrescriptionTargetDose_ID][int] NULL,
 [RTPrescriptionDVHObjectives_ID][int] NULL,
 [RTTreatedPlan_ID][int] NULL,
-[RTPrescription_ID][int] NULL,
      [RTPrescription_DateOfRecord][varchar](50) NULL,
      [RTPrescription_AgeAtRecord][float] NULL,
      [RTPrescription_Name][varchar](50) NULL,
@@ -427,7 +395,6 @@ GO
 
 CREATE TABLE [dbo].[RTPrescriptionTargetDose](
      [RTPrescriptionTargetDose_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTPrescriptionTargetDose_ID][int] NULL,
      [RTPrescriptionTargetDose_VolumeName][varchar](50) NULL,
      [RTPrescriptionTargetDose_VolumeDose][float] NULL,
      [RTPrescriptionTargetDose_DoseUnit][varchar](50) NULL,
@@ -442,7 +409,6 @@ GO
 
 CREATE TABLE [dbo].[RTPrescriptionDoseObjective](
      [RTPrescriptionDoseObjective_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTPrescriptionDoseObjective_ID][int] NULL,
      [RTPrescriptionDoseObjective_StructureType][varchar](50) NULL,
      [RTPrescriptionDoseObjective_ComponentStructures][varchar](50) NULL,
      [RTPrescriptionDoseObjective_StructureName][varchar](50) NULL,
@@ -461,7 +427,6 @@ GO
 
 CREATE TABLE [dbo].[RTTreatedPlan](
      [RTTreatedPlan_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTTreatedPlan_ID][int] NULL,
 [RTPlanningStructureSet_ID][int] NULL,
 [DVHCurve_ID][int] NULL,
 [DVHMetric_ID][int] NULL,
@@ -470,7 +435,6 @@ CREATE TABLE [dbo].[RTTreatedPlan](
 [RTTreatedPlanDetailsHadrons_ID][int] NULL,
 [RTPrescription_ID][int] NULL,
 [Image_ID][int] NULL,
-[RTTreatedPlan_ID][int] NULL,
      [RTTreatedPlan_Name][varchar](50) NULL,
      [RTTreatedPlan_TPSID][varchar](50) NULL,
      [RTTreatedPlan_TreatmentPlanningAlgorithm][varchar](50) NULL,
@@ -517,7 +481,6 @@ GO
 
 CREATE TABLE [dbo].[RTTreatedPlanTargetDose](
      [RTTreatedPlanTargetDose_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTTreatedPlanTargetDose_ID][int] NULL,
      [RTTreatedPlanTargetDose_VolumeName][varchar](50) NULL,
      [RTTreatedPlanTargetDose_VolumeDose][float] NULL,
      [RTTreatedPlanTargetDose_DoseUnit][varchar](50) NULL,
@@ -532,8 +495,6 @@ GO
 
 CREATE TABLE [dbo].[ReirradiationEvaluation](
      [ReirradiationEvaluation_ID] [int] IDENTITY(1,1) NOT NULL,
-[ReIrradiationEvaluation_ID][int] NULL,
-[ReIrradiationEvaluation_ID][int] NULL,
 [RTTreatedPlan_ID][int] NULL,
      [ReirradiationEvaluation_DateOfRecord][varchar](50) NULL,
      [ReirradiationEvaluation_AgeAtRecord][float] NULL,
@@ -561,7 +522,6 @@ GO
 
 CREATE TABLE [dbo].[RTTreatedPlanDetailsXRT](
      [RTTreatedPlanDetailsXRT_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTTreatedPlanDetailsXRT_ID][int] NULL,
      [RTTreatedPlanDetailsXRT_Technique][varchar](50) NULL,
      [RTTreatedPlanDetailsXRT_IMRTLeafMotion][varchar](50) NULL,
      [RTTreatedPlanDetailsXRT_DeliveryDevice][varchar](50) NULL,
@@ -577,7 +537,6 @@ GO
 
 CREATE TABLE [dbo].[RTTreatedPlanDetailsBrachytherapy](
      [RTTreatedPlanDetailsBrachytherapy_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTTreatedPlanDetailsBrachytherapy_ID][int] NULL,
      [RTTreatedPlanDetailsBrachytherapy_Technique][varchar](50) NULL,
      [RTTreatedPlanDetailsBrachytherapy_DeliveryDevice][varchar](50) NULL,
      [RTTreatedPlanDetailsBrachytherapy_Energy][varchar](50) NULL,
@@ -592,7 +551,6 @@ GO
 
 CREATE TABLE [dbo].[RTTreatedPlanDetailsRadiopharmaceutical](
      [RTTreatedPlanDetailsRadiopharmaceutical_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTTreatedPlanDetailsRadiopharmaceutical_ID][int] NULL,
      [RTTreatedPlanDetailsRadiopharmaceutical_Technique][varchar](50) NULL,
      [RTTreatedPlanDetailsRadiopharmaceutical_Energy][varchar](50) NULL,
    CONSTRAINT[PK_RTTreatedPlanDetailsRadiopharmaceutical] PRIMARY KEY CLUSTERED
@@ -606,7 +564,6 @@ GO
 
 CREATE TABLE [dbo].[RTTreatedPlanDetailsHadrons](
      [RTTreatedPlanDetailsHadrons_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTTreatedPlanDetailsHadrons_ID][int] NULL,
      [RTTreatedPlanDetailsHadrons_AreaCoverageMethod][varchar](50) NULL,
      [RTTreatedPlanDetailsHadrons_FieldOptimizationMethod][varchar](50) NULL,
      [RTTreatedPlanDetailsHadrons_ProtonRobustOptimization][varchar](50) NULL,
@@ -626,7 +583,6 @@ GO
 
 CREATE TABLE [dbo].[RTTreatedFieldDetailsHadrons](
      [RTTreatedFieldDetailsHadrons_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTTreatedFieldDetailsHadrons_ID][int] NULL,
      [RTTreatedFieldDetailsHadrons_Name][varchar](50) NULL,
      [RTTreatedFieldDetailsHadrons_RangeShifter][varchar](50) NULL,
      [RTTreatedFieldDetailsHadrons_UsedAperture][bit] NULL,
@@ -641,8 +597,6 @@ GO
 
 CREATE TABLE [dbo].[RTTreatedPlanFraction](
      [RTTreatedPlanFraction_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTTreatedPlanFraction_ID][int] NULL,
-[RTTreatedPlanFraction_ID][int] NULL,
      [RTTreatedPlanFraction_DateOfRecord][varchar](50) NULL,
      [RTTreatedPlanFraction_AgeAtRecord][float] NULL,
      [RTTreatedPlanFraction_Number][float] NULL,
@@ -659,7 +613,6 @@ GO
 
 CREATE TABLE [dbo].[RTTreatedFieldFraction](
      [RTTreatedFieldFraction_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTTreatedFieldFraction_ID][int] NULL,
      [RTTreatedFieldFraction_DateOfRecord][varchar](50) NULL,
      [RTTreatedFieldFraction_AgeAtRecord][float] NULL,
      [RTTreatedFieldFraction_Name][varchar](50) NULL,
@@ -677,7 +630,6 @@ GO
 
 CREATE TABLE [dbo].[DVHCurve](
      [DVHCurve_ID] [int] IDENTITY(1,1) NOT NULL,
-[DVHCurve_ID][int] NULL,
 [DVHMetric_ID][int] NULL,
      [DVHCurve_StructureName][varchar](50) NULL,
      [DVHCurve_Volume][float] NULL,
@@ -700,8 +652,6 @@ GO
 
 CREATE TABLE [dbo].[DVHMetric](
      [DVHMetric_ID] [int] IDENTITY(1,1) NOT NULL,
-[DVHMetric_ID][int] NULL,
-[DVHMetric_ID][int] NULL,
      [DVHMetric_StructureName][varchar](50) NULL,
      [DVHMetric_Name][varchar](50) NULL,
      [DVHMetric_Value][float] NULL,
@@ -716,7 +666,6 @@ GO
 
 CREATE TABLE [dbo].[RTPlanningStructureSet](
      [RTPlanningStructureSet_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTPlanningStructureSet_ID][int] NULL,
 [RTPlanning Structure_ID][int] NULL,
      [RTPlanningStructureSet_Name][varchar](50) NULL,
      [RTPlanningStructureSet_DICOM_RS][varchar](50) NULL,
@@ -731,8 +680,6 @@ GO
 
 CREATE TABLE [dbo].[RTPlanningStructure](
      [RTPlanningStructure_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTPlanningStructure_ID][int] NULL,
-[RTPlanningStructure_ID][int] NULL,
      [RTPlanningStructure_Name][varchar](50) NULL,
      [RTPlanningStructure_Type][varchar](50) NULL,
      [RTPlanningStructure_PlanningStructureGeneration][varchar](50) NULL,
@@ -747,7 +694,6 @@ GO
 
 CREATE TABLE [dbo].[Image](
      [Image_ID] [int] IDENTITY(1,1) NOT NULL,
-[Image_ID][int] NULL,
 [RTCourse_ID][int] NULL,
 [RTCourseSession_ID][int] NULL,
      [Image_DateOfRecord][varchar](50) NULL,
@@ -768,10 +714,6 @@ GO
 
 CREATE TABLE [dbo].[LabResult](
      [LabResult_ID] [int] IDENTITY(1,1) NOT NULL,
-[LabResult_ID][int] NULL,
-[LabResult_ID][int] NULL,
-[LabResult_ID][int] NULL,
-[LabResult_ID][int] NULL,
      [LabResult_DateOfRecord][varchar](50) NULL,
      [LabResult_AgeAtRecord][float] NULL,
      [LabResult_Name][varchar](50) NULL,
@@ -788,10 +730,6 @@ GO
 
 CREATE TABLE [dbo].[SupportiveMedication](
      [SupportiveMedication_ID] [int] IDENTITY(1,1) NOT NULL,
-[SupportiveMedication_ID][int] NULL,
-[SupportiveMedication_ID][int] NULL,
-[SupportiveMedication_ID][int] NULL,
-[SupportiveMedication_ID][int] NULL,
      [SupportiveMedication_DateOfRecord][varchar](50) NULL,
      [SupportiveMedication_AgeAtRecord][float] NULL,
      [SupportiveMedication_Name][varchar](50) NULL,
@@ -808,10 +746,6 @@ GO
 
 CREATE TABLE [dbo].[FunctionTestResult](
      [FunctionTestResult_ID] [int] IDENTITY(1,1) NOT NULL,
-[FunctionTestResult_ID][int] NULL,
-[FunctionTestResult_ID][int] NULL,
-[FunctionTestResult_ID][int] NULL,
-[FunctionTestResult_ID][int] NULL,
      [FunctionTestResult_DateOfRecord][varchar](50) NULL,
      [FunctionTestResult_AgeAtRecord][float] NULL,
      [FunctionTestResult_Name][varchar](50) NULL,
@@ -828,8 +762,6 @@ GO
 
 CREATE TABLE [dbo].[SysTherCourse](
      [SysTherCourse_ID] [int] IDENTITY(1,1) NOT NULL,
-[SysTherCourse_ID][int] NULL,
-[SysTherCourse_ID][int] NULL,
 [Charge_ID][int] NULL,
      [SysTherCourse_DateOfRecord][varchar](50) NULL,
      [SysTherCourse_AgeAtRecord][float] NULL,
@@ -876,7 +808,6 @@ GO
 
 CREATE TABLE [dbo].[SysTherCycleDrugsChemo](
      [SysTherCycleDrugsChemo_ID] [int] IDENTITY(1,1) NOT NULL,
-[SysTherCycleDrugsChemo_ID][int] NULL,
      [SysTherCycleDrugsChemo_SystemicTherapyCycleName][varchar](50) NULL,
      [SysTherCycleDrugsChemo_AdministrationMethod][varchar](50) NULL,
      [SysTherCycleDrugsChemo_DrugName][varchar](50) NULL,
@@ -893,7 +824,6 @@ GO
 
 CREATE TABLE [dbo].[SysTherCycleDrugsHT](
      [SysTherCycleDrugsHT_ID] [int] IDENTITY(1,1) NOT NULL,
-[SysTherCycleDrugsHT_ID][int] NULL,
      [SysTherCycleDrugsHT_DateOfRecord][varchar](50) NULL,
      [SysTherCycleDrugsHT_AgeAtRecord][float] NULL,
      [SysTherCycleDrugsHT_DrugName][varchar](50) NULL,
@@ -910,8 +840,6 @@ GO
 
 CREATE TABLE [dbo].[SysTherCycleDrugsImmuno](
      [SysTherCycleDrugsImmuno_ID] [int] IDENTITY(1,1) NOT NULL,
-[SysTherCycleDrugsImmuno_ID][int] NULL,
-[SysTherCycleDrugsImmuno_ID][int] NULL,
      [SysTherCycleDrugsImmuno_DateOfRecord][varchar](50) NULL,
      [SysTherCycleDrugsImmuno_AgeAtRecord][float] NULL,
      [SysTherCycleDrugsImmuno_DrugName][varchar](50) NULL,
@@ -928,8 +856,6 @@ GO
 
 CREATE TABLE [dbo].[InterventionalProcedure](
      [InterventionalProcedure_ID] [int] IDENTITY(1,1) NOT NULL,
-[InterventionalProcedure_ID][int] NULL,
-[InterventionalProcedure_ID][int] NULL,
 [RTCourse_ID][int] NULL,
 [SysTherCourse_ID][int] NULL,
 [Charge_ID][int] NULL,
@@ -963,10 +889,6 @@ GO
 
 CREATE TABLE [dbo].[PatientEncounter](
      [PatientEncounter_ID] [int] IDENTITY(1,1) NOT NULL,
-[PatientEncounter_ID][int] NULL,
-[PatientEncounter_ID][int] NULL,
-[PatientEncounter_ID][int] NULL,
-[PatientEncounter_ID][int] NULL,
 [Charge_ID][int] NULL,
      [PatientEncounter_DateOfRecord][varchar](50) NULL,
      [PatientEncounter_AgeAtRecord][float] NULL,
@@ -1003,11 +925,6 @@ GO
 
 CREATE TABLE [dbo].[Charge](
      [Charge_ID] [int] IDENTITY(1,1) NOT NULL,
-[Charge_ID][int] NULL,
-[Charge_ID][int] NULL,
-[Charge_ID][int] NULL,
-[Charge_ID][int] NULL,
-[Charge_ID][int] NULL,
      [Charge_DateOfRecord][varchar](50) NULL,
      [Charge_AgeAtRecord][float] NULL,
      [Charge_Code][varchar](50) NULL,
@@ -1039,9 +956,6 @@ GO
 
 CREATE TABLE [dbo].[HCO_Site](
      [HCO_Site_ID] [int] IDENTITY(1,1) NOT NULL,
-[HCO_Site_ID][int] NULL,
-[HCO_Site_ID][int] NULL,
-[HCO_Site_ID][int] NULL,
 [HCO_SiteCount_ID][int] NULL,
      [HCO_Site_DateOfRecord][varchar](50) NULL,
      [HCO_Site_AgeAtRecord][float] NULL,
@@ -1062,7 +976,6 @@ GO
 
 CREATE TABLE [dbo].[HCO_SiteCount](
      [HCO_SiteCount_ID] [int] IDENTITY(1,1) NOT NULL,
-[HCO_SiteCount_ID][int] NULL,
      [HCO_SiteCount_DateOfRecord][varchar](50) NULL,
      [HCO_SiteCount_AgeAtRecord][float] NULL,
      [HCO_SiteCount_TimePointType][varchar](50) NULL,
@@ -1080,7 +993,6 @@ GO
 
 CREATE TABLE [dbo].[HCO_SiteUnitCount](
      [HCO_SiteUnitCount_ID] [int] IDENTITY(1,1) NOT NULL,
-[HCO_SiteUnitCount_ID][int] NULL,
      [HCO_SiteUnitCount_DateOfRecord][varchar](50) NULL,
      [HCO_SiteUnitCount_AgeAtRecord][float] NULL,
      [HCO_SiteUnitCount_TimePointType][varchar](50) NULL,
@@ -1098,7 +1010,6 @@ GO
 
 CREATE TABLE [dbo].[HCO_SiteUnitUtilizationCount](
      [HCO_SiteUnitUtilizationCount_ID] [int] IDENTITY(1,1) NOT NULL,
-[HCO_SiteUnitUtilizationCount_ID][int] NULL,
      [HCO_SiteUnitUtilizationCount_DateOfRecord][varchar](50) NULL,
      [HCO_SiteUnitUtilizationCount_AgeAtRecord][float] NULL,
      [HCO_SiteUnitUtilizationCount_NameOfUnit][varchar](50) NULL,
@@ -1117,7 +1028,6 @@ GO
 
 CREATE TABLE [dbo].[HCO_SiteCapabilities](
      [HCO_SiteCapabilities_ID] [int] IDENTITY(1,1) NOT NULL,
-[HCO_SiteCapabilities_ID][int] NULL,
      [HCO_SiteCapabilities_DateOfRecord][varchar](50) NULL,
      [HCO_SiteCapabilities_AgeAtRecord][float] NULL,
      [HCO_SiteCapabilities_TimePointType][varchar](50) NULL,
@@ -1136,7 +1046,6 @@ GO
 
 CREATE TABLE [dbo].[HCO_SiteStaff](
      [HCO_SiteStaff_ID] [int] IDENTITY(1,1) NOT NULL,
-[HCO_SiteStaff_ID][int] NULL,
      [HCO_SiteStaff_DateOfRecord][varchar](50) NULL,
      [HCO_SiteStaff_AgeAtRecord][float] NULL,
      [HCO_SiteStaff_TimePointType][varchar](50) NULL,
@@ -1160,7 +1069,6 @@ GO
 
 CREATE TABLE [dbo].[HCO_SiteImgTrtUnitInfo](
      [HCO_SiteImgTrtUnitInfo_ID] [int] IDENTITY(1,1) NOT NULL,
-[HCO_SiteImgTrtUnitInfo_ID][int] NULL,
      [HCO_SiteImgTrtUnitInfo_DateOfRecord][varchar](50) NULL,
      [HCO_SiteImgTrtUnitInfo_AgeAtRecord][float] NULL,
      [HCO_SiteImgTrtUnitInfo_TimePointType][varchar](50) NULL,
