@@ -683,7 +683,7 @@ GO
 
 CREATE TABLE [dbo].[RTPlanningStructureSet](
      [RTPlanningStructureSet_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTPlanning Structure_ID][int] NULL,
+[RTPlanningStructure_ID][int] NULL,
      [RTPlanningStructureSet_Name][varchar](50) NULL,
      [RTPlanningStructureSet_DICOM_RS][varchar](50) NULL,
    CONSTRAINT[PK_RTPlanningStructureSet] PRIMARY KEY CLUSTERED
