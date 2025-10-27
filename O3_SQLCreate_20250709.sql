@@ -19,6 +19,7 @@ CREATE TABLE [dbo].[Patient](
 [SysTherCourse_ID][int] NULL,
 [InterventionalProcedure_ID][int] NULL,
 [Charge_ID][int] NULL,
+[PatientEncounter_ID][int] NULL,
      [Patient_MRN][varchar](50) NULL,
      [Patient_AnonPatID][varchar](50) NULL,
      [Patient_PatIDS][varchar](50) NULL,
@@ -266,6 +267,9 @@ CREATE TABLE [dbo].[RTCourse](
 [DiagStaging_ID][int] NULL,
 [RTPrescription_ID][int] NULL,
 [RTTreatedPlan_ID][int] NULL,
+[RTCourseTargetDose_ID][int] NULL,
+[RTCourseSession_ID][int] NULL,
+[RTCourseEvent_ID][int] NULL,
      [RTCourse_DateOfRecord][varchar](50) NULL,
      [RTCourse_AgeAtRecord][float] NULL,
      [RTCourse_Facility][varchar](50) NULL,
@@ -344,6 +348,7 @@ GO
 
 CREATE TABLE [dbo].[RTPhase](
      [RTPhase_ID] [int] IDENTITY(1,1) NOT NULL,
+[RTPhaseTargetDose_ID][int] NULL,
      [RTPhase_DateOfRecord][varchar](50) NULL,
      [RTPhase_AgeAtRecord][float] NULL,
      [RTPhase_Name][varchar](50) NULL,
@@ -376,7 +381,7 @@ GO
 CREATE TABLE [dbo].[RTPrescription](
      [RTPrescription_ID] [int] IDENTITY(1,1) NOT NULL,
 [RTPrescriptionTargetDose_ID][int] NULL,
-[RTPrescriptionDVHObjectives_ID][int] NULL,
+[RTPrescriptionDoseObjective_ID][int] NULL,
 [RTTreatedPlan_ID][int] NULL,
      [RTPrescription_DateOfRecord][varchar](50) NULL,
      [RTPrescription_AgeAtRecord][float] NULL,
@@ -438,6 +443,7 @@ CREATE TABLE [dbo].[RTTreatedPlan](
 [RTTreatedPlanDetailsHadrons_ID][int] NULL,
 [RTPrescription_ID][int] NULL,
 [Image_ID][int] NULL,
+[RTTreatedPlanTargetDose_ID][int] NULL,
      [RTTreatedPlan_Name][varchar](50) NULL,
      [RTTreatedPlan_TPSID][varchar](50) NULL,
      [RTTreatedPlan_TreatmentPlanningAlgorithm][varchar](50) NULL,
@@ -613,6 +619,7 @@ GO
 
 CREATE TABLE [dbo].[RTTreatedPlanFraction](
      [RTTreatedPlanFraction_ID] [int] IDENTITY(1,1) NOT NULL,
+[RTTreatedFieldFraction_ID][int] NULL,
      [RTTreatedPlanFraction_DateOfRecord][varchar](50) NULL,
      [RTTreatedPlanFraction_AgeAtRecord][float] NULL,
      [RTTreatedPlanFraction_Number][float] NULL,
@@ -683,7 +690,7 @@ GO
 
 CREATE TABLE [dbo].[RTPlanningStructureSet](
      [RTPlanningStructureSet_ID] [int] IDENTITY(1,1) NOT NULL,
-[RTPlanning Structure_ID][int] NULL,
+[RTPlanningStructure_ID][int] NULL,
      [RTPlanningStructureSet_Name][varchar](50) NULL,
      [RTPlanningStructureSet_DICOM_RS][varchar](50) NULL,
    CONSTRAINT[PK_RTPlanningStructureSet] PRIMARY KEY CLUSTERED
