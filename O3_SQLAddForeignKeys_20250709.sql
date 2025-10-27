@@ -58,6 +58,15 @@ ALTER TABLE dbo.Patient
 ADD FOREIGN KEY (Charge_ID)
 REFERENCES dbo.Charge(Charge_ID)
 GO
+ALTER TABLE dbo.Patient
+ADD FOREIGN KEY (PatientEncounter_ID)
+REFERENCES dbo.PatientEncounter(PatientEncounter_ID)
+GO
+
+ALTER TABLE dbo.DiagStaging
+ADD FOREIGN KEY (DiagStagingHN_ID)
+REFERENCES dbo.DiagStagingHN(DiagStagingHN_ID)
+GO
 
 ALTER TABLE dbo.RTCourse
 ADD FOREIGN KEY (DiagStaging_ID)
@@ -71,6 +80,22 @@ ALTER TABLE dbo.RTCourse
 ADD FOREIGN KEY (RTTreatedPlan_ID)
 REFERENCES dbo.RTTreatedPlan(RTTreatedPlan_ID)
 GO
+ALTER TABLE dbo.RTCourse
+ADD FOREIGN KEY (RTCourseTargetDose_ID)
+REFERENCES dbo.RTCourseTargetDose(RTCourseTargetDose_ID)
+GO
+ALTER TABLE dbo.RTCourse
+ADD FOREIGN KEY (RTCourseSession_ID)
+REFERENCES dbo.RTCourseSession(RTCourseSession_ID)
+GO
+ALTER TABLE dbo.RTCourse
+ADD FOREIGN KEY (RTCourseEvent_ID)
+REFERENCES dbo.RTCourseEvent(RTCourseEvent_ID)
+GO
+ALTER TABLE dbo.RTCourse
+ADD FOREIGN KEY (RTPhase_ID)
+REFERENCES dbo.RTPhase(RTPhase_ID)
+GO
 
 ALTER TABLE dbo.RTCourseSession
 ADD FOREIGN KEY (RTTreatedPlanFraction_ID)
@@ -81,12 +106,11 @@ ALTER TABLE dbo.RTPrescription
 ADD FOREIGN KEY (RTPrescriptionTargetDose_ID)
 REFERENCES dbo.RTPrescriptionTargetDose(RTPrescriptionTargetDose_ID)
 GO
-/*
+
 ALTER TABLE dbo.RTPrescription
-ADD FOREIGN KEY (RTPrescriptionDVHObjectives_ID)
-REFERENCES dbo.RTPrescriptionDVHObjectives(RTPrescriptionDVHObjectives_ID)
+ADD FOREIGN KEY (RTPrescriptionDoseObjective_ID)
+REFERENCES dbo.RTPrescriptionDoseObjective(RTPrescriptionDoseObjective_ID)
 GO
-*/
 ALTER TABLE dbo.RTPrescription
 ADD FOREIGN KEY (RTTreatedPlan_ID)
 REFERENCES dbo.RTTreatedPlan(RTTreatedPlan_ID)
@@ -124,6 +148,15 @@ ALTER TABLE dbo.RTTreatedPlan
 ADD FOREIGN KEY (Image_ID)
 REFERENCES dbo.Image(Image_ID)
 GO
+ALTER TABLE dbo.RTTreatedPlan
+ADD FOREIGN KEY (RTTreatedPlanTargetDose_ID)
+REFERENCES dbo.RTTreatedPlanTargetDose(RTTreatedPlanTargetDose_ID)
+GO
+
+ALTER TABLE dbo.RTTreatedPlanFraction
+ADD FOREIGN KEY (RTTreatedFieldFraction_ID)
+REFERENCES dbo.RTTreatedFieldFraction(RTTreatedFieldFraction_ID)
+GO
 
 ALTER TABLE dbo.ReirradiationEvaluation
 ADD FOREIGN KEY (RTTreatedPlan_ID)
@@ -160,4 +193,9 @@ GO
 ALTER TABLE dbo.InterventionalProcedure
 ADD FOREIGN KEY (SysTherCourse_ID)
 REFERENCES dbo.SysTherCourse(SysTherCourse_ID)
+GO
+
+ALTER TABLE dbo.RTPhase
+ADD FOREIGN KEY (RTPhaseTargetDose_ID)
+REFERENCES dbo.RTPhaseTargetDose(RTPhaseTargetDose_ID)
 GO
