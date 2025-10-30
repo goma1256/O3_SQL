@@ -1,201 +1,262 @@
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (RTCourse_ID)
-REFERENCES dbo.RTCourse(RTCourse_ID)   
-GO
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (RTPrescription_ID)
-REFERENCES dbo.RTPrescription(RTPrescription_ID)
-GO
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (DiagStaging_ID)
-REFERENCES dbo.DiagStaging(DiagStaging_ID)
-GO
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (RTTreatedPlan_ID)
-REFERENCES dbo.RTTreatedPlan(RTTreatedPlan_ID)
-GO
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (ReIrradiationEvaluation_ID)
-REFERENCES dbo.ReIrradiationEvaluation(ReIrradiationEvaluation_ID)
-GO
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (PatientTreatmentOutcome_ID)
-REFERENCES dbo.PatientTreatmentOutcome(PatientTreatmentOutcome_ID)
-GO
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (PlanningStructureSet_ID)
-REFERENCES dbo.RTPlanningStructureSet(RTPlanningStructureSet_ID)
-GO
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (ProviderReportedToxicity_ID)
-REFERENCES dbo.ProviderReportedToxicity(ProviderReportedToxicity_ID)
-GO
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (PRO_ID)
-REFERENCES dbo.PRO(PRO_ID)
-GO
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (PatientInformation_ID)
-REFERENCES dbo.PatientInformation(PatientInformation_ID)
-GO
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (LabResult_ID)
-REFERENCES dbo.LabResult(LabResult_ID)
-GO
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (SupportiveMedication_ID)
-REFERENCES dbo.SupportiveMedication(SupportiveMedication_ID)
-GO
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (SysTherCourse_ID)
-REFERENCES dbo.SysTherCourse(SysTherCourse_ID)
-GO
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (InterventionalProcedure_ID)
-REFERENCES dbo.InterventionalProcedure(InterventionalProcedure_ID)
-GO
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (Charge_ID)
-REFERENCES dbo.Charge(Charge_ID)
-GO
-ALTER TABLE dbo.Patient
-ADD FOREIGN KEY (PatientEncounter_ID)
-REFERENCES dbo.PatientEncounter(PatientEncounter_ID)
+ALTER TABLE dbo.PatientInformation
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
 GO
 
 ALTER TABLE dbo.DiagStaging
-ADD FOREIGN KEY (DiagStagingHN_ID)
-REFERENCES dbo.DiagStagingHN(DiagStagingHN_ID)
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
 GO
 
-ALTER TABLE dbo.RTCourse
+ALTER TABLE dbo.DiagStagingHN
 ADD FOREIGN KEY (DiagStaging_ID)
 REFERENCES dbo.DiagStaging(DiagStaging_ID)
 GO
-ALTER TABLE dbo.RTCourse
-ADD FOREIGN KEY (RTPrescription_ID)
-REFERENCES dbo.RTPrescription(RTPrescription_ID)
+ALTER TABLE dbo.DiagStagingProst
+ADD FOREIGN KEY (DiagStaging_ID)
+REFERENCES dbo.DiagStaging(DiagStaging_ID)
 GO
-ALTER TABLE dbo.RTCourse
-ADD FOREIGN KEY (RTTreatedPlan_ID)
-REFERENCES dbo.RTTreatedPlan(RTTreatedPlan_ID)
+ALTER TABLE dbo.DiagStagingTreatmentOverview
+ADD FOREIGN KEY (DiagStaging_ID)
+REFERENCES dbo.DiagStaging(DiagStaging_ID)
 GO
-ALTER TABLE dbo.RTCourse
-ADD FOREIGN KEY (RTCourseTargetDose_ID)
-REFERENCES dbo.RTCourseTargetDose(RTCourseTargetDose_ID)
+
+ALTER TABLE dbo.PatientTreatmentOutcome
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
 GO
-ALTER TABLE dbo.RTCourse
-ADD FOREIGN KEY (RTCourseSession_ID)
-REFERENCES dbo.RTCourseSession(RTCourseSession_ID)
+
+ALTER TABLE dbo.ProviderReportedToxicity
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
 GO
-ALTER TABLE dbo.RTCourse
-ADD FOREIGN KEY (RTCourseEvent_ID)
-REFERENCES dbo.RTCourseEvent(RTCourseEvent_ID)
+
+ALTER TABLE dbo.PRO
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
 GO
+
+ALTER TABLE dbo.PerformanceScore
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
+GO
+
 ALTER TABLE dbo.RTCourse
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
+GO
+
+ALTER TABLE dbo.RTCourseTargetDose
+ADD FOREIGN KEY (RTCourse_ID)
+REFERENCES dbo.RTCourse(RTCourse_ID)
+GO
+
+ALTER TABLE dbo.RTCourseEvent
+ADD FOREIGN KEY (RTCourse_ID)
+REFERENCES dbo.RTCourse(RTCourse_ID)
+GO
+
+ALTER TABLE dbo.RTCourseSession
+ADD FOREIGN KEY (RTCourse_ID)
+REFERENCES dbo.RTCourse(RTCourse_ID)
+GO
+
+ALTER TABLE dbo.RTPhase
+ADD FOREIGN KEY (RTCourse_ID)
+REFERENCES dbo.RTCourse(RTCourse_ID)
+GO
+
+ALTER TABLE dbo.RTPhaseTargetDose
 ADD FOREIGN KEY (RTPhase_ID)
 REFERENCES dbo.RTPhase(RTPhase_ID)
 GO
 
-ALTER TABLE dbo.RTCourseSession
+ALTER TABLE dbo.RTPrescription
+ADD FOREIGN KEY (RTCourse_ID)
+REFERENCES dbo.RTCourse(RTCourse_ID)
+GO
+
+ALTER TABLE dbo.RTPrescriptionTargetDose
+ADD FOREIGN KEY (RTPrescription_ID)
+REFERENCES dbo.RTPrescription(RTPrescription_ID)
+GO
+
+ALTER TABLE dbo.RTPrescriptionDoseObjective
+ADD FOREIGN KEY (RTPrescription_ID)
+REFERENCES dbo.RTPrescription(RTPrescription_ID)
+GO
+
+ALTER TABLE dbo.RTTreatedPlan
+ADD FOREIGN KEY (RTCourse_ID)
+REFERENCES dbo.RTCourse(RTCourse_ID)
+GO
+
+ALTER TABLE dbo.RTTreatedPlanTargetDose
+ADD FOREIGN KEY (RTTreatedPlan_ID)
+REFERENCES dbo.RTTreatedPlan(RTTreatedPlan_ID)
+GO
+
+ALTER TABLE dbo.ReirradiationEvaluation
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
+GO
+
+ALTER TABLE dbo.ReirradiationEvaluation_DVHMetric
+ADD FOREIGN KEY (ReirradiationEvaluation_ID)
+REFERENCES dbo.ReirradiationEvaluation(ReirradiationEvaluation_ID)
+GO
+
+ALTER TABLE dbo.RTTreatedPlanDetailsXRT
+ADD FOREIGN KEY (RTTreatedPlan_ID)
+REFERENCES dbo.RTTreatedPlan(RTTreatedPlan_ID)
+GO
+
+ALTER TABLE dbo.RTTreatedPlanDetailsBrachytherapy
+ADD FOREIGN KEY (RTTreatedPlan_ID)
+REFERENCES dbo.RTTreatedPlan(RTTreatedPlan_ID)
+GO
+
+ALTER TABLE dbo.RTTreatedPlanDetailsRadiopharmaceutical
+ADD FOREIGN KEY (RTTreatedPlan_ID)
+REFERENCES dbo.RTTreatedPlan(RTTreatedPlan_ID)
+GO
+
+ALTER TABLE dbo.RTTreatedPlanDetailsHadrons
+ADD FOREIGN KEY (RTTreatedPlan_ID)
+REFERENCES dbo.RTTreatedPlan(RTTreatedPlan_ID)
+GO
+
+ALTER TABLE dbo.RTTreatedFieldDetailsHadrons
+ADD FOREIGN KEY (RTTreatedPlanDetailsHadrons_ID)
+REFERENCES dbo.RTTreatedPlanDetailsHadrons(RTTreatedPlanDetailsHadrons_ID)
+GO
+
+ALTER TABLE dbo.RTTreatedPlanFraction
+ADD FOREIGN KEY (RTTreatedPlan_ID)
+REFERENCES dbo.RTTreatedPlan(RTTreatedPlan_ID)
+GO
+
+ALTER TABLE dbo.RTTreatedFieldFraction
 ADD FOREIGN KEY (RTTreatedPlanFraction_ID)
 REFERENCES dbo.RTTreatedPlanFraction(RTTreatedPlanFraction_ID)
 GO
 
-ALTER TABLE dbo.RTPrescription
-ADD FOREIGN KEY (RTPrescriptionTargetDose_ID)
-REFERENCES dbo.RTPrescriptionTargetDose(RTPrescriptionTargetDose_ID)
-GO
-
-ALTER TABLE dbo.RTPrescription
-ADD FOREIGN KEY (RTPrescriptionDoseObjective_ID)
-REFERENCES dbo.RTPrescriptionDoseObjective(RTPrescriptionDoseObjective_ID)
-GO
-ALTER TABLE dbo.RTPrescription
-ADD FOREIGN KEY (RTTreatedPlan_ID)
-REFERENCES dbo.RTTreatedPlan(RTTreatedPlan_ID)
-GO
-
-ALTER TABLE dbo.RTTreatedPlan
-ADD FOREIGN KEY (RTPlanningStructureSet_ID)
-REFERENCES dbo.RTPlanningStructureSet(RTPlanningStructureSet_ID)
-GO
-ALTER TABLE dbo.RTTreatedPlan
-ADD FOREIGN KEY (DVHCurve_ID)
-REFERENCES dbo.DVHCurve(DVHCurve_ID)
-GO
-ALTER TABLE dbo.RTTreatedPlan
-ADD FOREIGN KEY (DVHMetric_ID)
-REFERENCES dbo.DVHMetric(DVHMetric_ID)
-GO
-ALTER TABLE dbo.RTTreatedPlan
-ADD FOREIGN KEY (RTTreatedPlanDetailsXRT_ID)
-REFERENCES dbo.RTTreatedPlanDetailsXRT(RTTreatedPlanDetailsXRT_ID)
-GO
-ALTER TABLE dbo.RTTreatedPlan
-ADD FOREIGN KEY (RTTreatedPlanDetailsBrachytherapy_ID)
-REFERENCES dbo.RTTreatedPlanDetailsBrachytherapy(RTTreatedPlanDetailsBrachytherapy_ID)
-GO
-ALTER TABLE dbo.RTTreatedPlan
-ADD FOREIGN KEY (RTTreatedPlanDetailsHadrons_ID)
-REFERENCES dbo.RTTreatedPlanDetailsHadrons(RTTreatedPlanDetailsHadrons_ID)
-GO
-ALTER TABLE dbo.RTTreatedPlan
-ADD FOREIGN KEY (RTPrescription_ID)
-REFERENCES dbo.RTPrescription(RTPrescription_ID)
-GO
-ALTER TABLE dbo.RTTreatedPlan
-ADD FOREIGN KEY (Image_ID)
-REFERENCES dbo.Image(Image_ID)
-GO
-ALTER TABLE dbo.RTTreatedPlan
-ADD FOREIGN KEY (RTTreatedPlanTargetDose_ID)
-REFERENCES dbo.RTTreatedPlanTargetDose(RTTreatedPlanTargetDose_ID)
-GO
-
-ALTER TABLE dbo.RTTreatedPlanFraction
-ADD FOREIGN KEY (RTTreatedFieldFraction_ID)
-REFERENCES dbo.RTTreatedFieldFraction(RTTreatedFieldFraction_ID)
-GO
-
-ALTER TABLE dbo.ReirradiationEvaluation
-ADD FOREIGN KEY (RTTreatedPlan_ID)
-REFERENCES dbo.RTTreatedPlan(RTTreatedPlan_ID)
-GO
-ALTER TABLE dbo.ReirradiationEvaluation
-ADD FOREIGN KEY (ReirradiationEvaluation_DVHMetric_ID)
-REFERENCES dbo.ReirradiationEvaluation_DVHMetric(ReirradiationEvaluation_DVHMetric_ID)
-GO
-
 ALTER TABLE dbo.DVHCurve
-ADD FOREIGN KEY (DVHMetric_ID)
-REFERENCES dbo.DVHMetric(DVHMetric_ID)
+ADD FOREIGN KEY (RTTreatedPlan_ID)
+REFERENCES dbo.RTTreatedPlan(RTTreatedPlan_ID)
+GO
+
+ALTER TABLE dbo.DVHMetric
+ADD FOREIGN KEY (RTTreatedPlan_ID)
+REFERENCES dbo.RTTreatedPlan(RTTreatedPlan_ID)
 GO
 
 ALTER TABLE dbo.RTPlanningStructureSet
-ADD FOREIGN KEY (RTPlanningStructure_ID)
-REFERENCES dbo.RTPlanningStructure(RTPlanningStructure_ID)
+ADD FOREIGN KEY (RTTreatedPlan_ID)
+REFERENCES dbo.RTTreatedPlan(RTTreatedPlan_ID)
+GO
+
+ALTER TABLE dbo.RTPlanningStructure
+ADD FOREIGN KEY (RTPlanningStructureSet_ID)
+REFERENCES dbo.RTPlanningStructureSet(RTPlanningStructureSet_ID)
 GO
 
 ALTER TABLE dbo.Image
-ADD FOREIGN KEY (RTCourse_ID)
-REFERENCES dbo.RTCourse(RTCourse_ID)
-GO
-ALTER TABLE dbo.Image
-ADD FOREIGN KEY (RTCourseSession_ID)
-REFERENCES dbo.RTCourseSession(RTCourseSession_ID)
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
 GO
 
-ALTER TABLE dbo.InterventionalProcedure
-ADD FOREIGN KEY (RTCourse_ID)
-REFERENCES dbo.RTCourse(RTCourse_ID)
+ALTER TABLE dbo.LabResult
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
 GO
-ALTER TABLE dbo.InterventionalProcedure
+
+ALTER TABLE dbo.SupportiveMedication
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
+GO
+
+ALTER TABLE dbo.FunctionTestResult
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
+GO
+
+ALTER TABLE dbo.SysTherCourse
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
+GO
+
+ALTER TABLE dbo.SysTherCycle
 ADD FOREIGN KEY (SysTherCourse_ID)
 REFERENCES dbo.SysTherCourse(SysTherCourse_ID)
 GO
 
-ALTER TABLE dbo.RTPhase
-ADD FOREIGN KEY (RTPhaseTargetDose_ID)
-REFERENCES dbo.RTPhaseTargetDose(RTPhaseTargetDose_ID)
+ALTER TABLE dbo.SysTherCycleDrugsChemo
+ADD FOREIGN KEY (SysTherCycle_ID)
+REFERENCES dbo.SysTherCycle(SysTherCycle_ID)
+GO
+
+ALTER TABLE dbo.SysTherCycleDrugsHT
+ADD FOREIGN KEY (SysTherCycle_ID)
+REFERENCES dbo.SysTherCycle(SysTherCycle_ID)
+GO
+
+ALTER TABLE dbo.SysTherCycleDrugsImmuno
+ADD FOREIGN KEY (SysTherCycle_ID)
+REFERENCES dbo.SysTherCycle(SysTherCycle_ID)
+GO
+
+ALTER TABLE dbo.InterventionalProcedure
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
+GO
+
+ALTER TABLE dbo.PatientEncounter
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
+GO
+
+ALTER TABLE dbo.Charge
+ADD FOREIGN KEY (Patient_ID)
+REFERENCES dbo.Patient(Patient_ID)
+GO
+
+ALTER TABLE dbo.HCO_Site
+ADD FOREIGN KEY (HCO_ID)
+REFERENCES dbo.HCO(HCO_ID)
+GO
+
+ALTER TABLE dbo.HCO_SiteCount
+ADD FOREIGN KEY (HCO_Site_ID)
+REFERENCES dbo.HCO_Site(HCO_Site_ID)
+GO
+
+ALTER TABLE dbo.HCO_SiteUnitCount
+ADD FOREIGN KEY (HCO_Site_ID)
+REFERENCES dbo.HCO_Site(HCO_Site_ID)
+GO
+
+ALTER TABLE dbo.HCO_SiteUnitUtilizationCount
+ADD FOREIGN KEY (HCO_Site_ID)
+REFERENCES dbo.HCO_Site(HCO_Site_ID)
+GO
+
+ALTER TABLE dbo.HCO_SiteCapabilities
+ADD FOREIGN KEY (HCO_Site_ID)
+REFERENCES dbo.HCO_Site(HCO_Site_ID)
+GO
+
+ALTER TABLE dbo.HCO_SiteStaff
+ADD FOREIGN KEY (HCO_Site_ID)
+REFERENCES dbo.HCO_Site(HCO_Site_ID)
+GO
+
+ALTER TABLE dbo.HCO_SiteImgTrtUnitInfo
+ADD FOREIGN KEY (HCO_Site_ID)
+REFERENCES dbo.HCO_Site(HCO_Site_ID)
+GO
+
+ALTER TABLE dbo.RTPlanningStructureSet
+ADD FOREIGN KEY (Image_ID)
+REFERENCES dbo.Image(Image_ID)
 GO
